@@ -1,0 +1,138 @@
+/* A simple reset to remove default browser margins and paddings,
+   and set box-sizing globally for easier layout calculations. */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/*  2. Global CSS Variables (Custom Properties) --- */
+/* Define reusable colors, spacing, and other values here.
+   This makes design changes easy and keeps consistency. */
+:root {
+    /* Colors */
+    --primary-blue: #3498db;          /* A vibrant blue for primary elements */
+    --secondary-dark-blue: #2c3e50;   /* Dark blue/gray for sidebar or deeper elements */
+    --background-light-gray: #f4f7fa; /* Overall page background */
+    --card-bg: #ffffff;               /* White for cards and prominent sections */
+    --text-dark: #333333;             /* Dark text for general content */
+    --text-medium: #555555;           /* Slightly lighter text */
+    --text-light: #ecf0f1;            /* Light text for dark backgrounds */
+    --border-light: #e0e0e0;          /* Light border color */
+    --shadow-light: rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+
+    /* Spacing (using a modular scale) */
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 20px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+
+    /* Border Radii */
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+
+    /* Typography (adjust as needed based on your chosen font) */
+    --font-family-base: 'Inter', sans-serif; /* Example: use your chosen font */
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+}
+
+/* --- 3. Global HTML & Body Styles --- */
+/* These ensure your application takes up the full screen and sets the base font. */
+html, body {
+    height: 100%; /* Ensures html and body take full viewport height */
+    overflow: hidden; /* Prevents unwanted scrollbars on the main document */
+}
+
+body {
+    font-family: var(--font-family-base); /* Apply your base font */
+    font-size: var(--font-size-base);     /* Base font size */
+    line-height: var(--line-height-base); /* Base line height */
+    color: var(--text-dark);             /* Default text color */
+    background-color: var(--background-light-gray); /* Overall background color */
+    -webkit-font-smoothing: antialiased; /* Smoother font rendering for WebKit */
+    -moz-osx-font-smoothing: grayscale;  /* Smoother font rendering for Firefox */
+    text-rendering: optimizeLegibility;  /* Optimizes text rendering */
+}
+
+/* --- 4. Base Element Styles (Optional, but good for consistency) --- */
+/* Basic styles for common HTML elements that you'll use throughout your app. */
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+    transition: color 0.2s ease-in-out; /* Smooth transition for links */
+}
+
+a:hover {
+    color: darken(var(--primary-blue), 10%); /* This won't work in plain CSS. Use a direct color or calculate with JS/SASS */
+    /* For plain CSS, you might use: color: #2a7fb8; */
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-sm);
+    background-color: var(--primary-blue);
+    color: white;
+    font-size: var(--font-size-base);
+    transition: background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: darken(var(--primary-blue), 10%);
+    /* For plain CSS, you might use: background-color: #2a7fb8; */
+}
+
+/* For images to be responsive by default */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}

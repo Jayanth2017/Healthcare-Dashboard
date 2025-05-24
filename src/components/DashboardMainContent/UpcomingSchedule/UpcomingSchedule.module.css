@@ -1,0 +1,190 @@
+/* src/components/DashboardMainContent/UpcomingSchedule/UpcomingSchedule.module.css */
+
+.upcomingSchedule {
+    background-color: var(--card-bg); /* White background, though the screenshot suggests parent background */
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 5px 15px var(--shadow-light);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md); /* Space between sections (title, day groups) */
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: var(--spacing-md); /* Space from previous section */
+    min-height: 200px; /* Adjust as needed */
+}
+
+.sectionTitle {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.dayGroup {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.dayHeader {
+    font-size: 1rem;
+    color: var(--text-medium); /* Lighter gray for day header */
+    margin: 0;
+    font-weight: normal; /* Match screenshot style */
+}
+
+.appointmentsGrid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Two columns, responsive */
+
+    gap: var(--spacing-md); /* Gap between appointment cards */
+    
+}
+
+.appointmentCard {
+    background-color: var(--background-light-gray); /* Light gray base, will be overridden by specific color classes */
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Subtle shadow for individual cards */
+    color: var(--text-dark); /* Default text color for cards */
+    min-height: 80px; /* Ensure consistent height */
+    box-sizing: border-box;
+}
+
+/* Specific card colors as seen in image_001d4e.png */
+.greenCard {
+    background-color: #E6FFF2; /* Light green, matching the 'Health checkup complete' card */
+    color: #2ECC71; /* Darker green text for contrast */
+}
+
+.purpleCard {
+    background-color: #EEE6FF; /* Light purple, matching 'Ophthalmologist' and 'Cardiologist' cards */
+    color: #8E44AD; /* Darker purple text for contrast */
+}
+
+.cardContent {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+    flex-grow: 1;
+}
+
+.appointmentTitle {
+    font-size: 1.1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.appointmentTime {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.appointmentIcon {
+    font-size: 2.5rem; /* Large icon */
+    margin-left: var(--spacing-md);
+    opacity: 0.7; /* Slightly faded icon */
+    color: var(--text-dark); /* Default icon color, overridden by card colors for contrast */
+}
+
+/* Override icon color for specific cards if desired, based on image_001d4e.png */
+.greenCard .appointmentIcon {
+    color: #2ECC71; /* Match text color for syringe/neurologist */
+}
+
+.purpleCard .appointmentIcon {
+    color: #8E44AD; /* Match text color for eye/heart */
+}
+
+
+/* --- Responsiveness for Upcoming Schedule --- */
+@media (max-width: 1024px) {
+    .upcomingSchedule {
+        padding: var(--spacing-sm);
+        gap: var(--spacing-sm);
+    }
+    .sectionTitle {
+        font-size: 1.2rem;
+    }
+    .dayHeader {
+        font-size: 0.9rem;
+    }
+    .appointmentsGrid {
+        gap: var(--spacing-sm);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust min-width for cards */
+    }
+    .appointmentCard {
+        padding: var(--spacing-sm);
+        min-height: 70px;
+    }
+    .appointmentTitle {
+        font-size: 1rem;
+    }
+    .appointmentTime {
+        font-size: 0.85rem;
+    }
+    .appointmentIcon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .upcomingSchedule {
+        padding: var(--spacing-xs);
+        gap: var(--spacing-xs);
+    }
+    .sectionTitle {
+        font-size: 1.1rem;
+    }
+    .dayHeader {
+        font-size: 0.85rem;
+    }
+    .appointmentsGrid {
+        gap: var(--spacing-xs);
+        grid-template-columns: 1fr; /* Stack cards vertically on smaller screens */
+    }
+    .appointmentCard {
+        padding: var(--spacing-xs);
+        min-height: 60px;
+    }
+    .appointmentTitle {
+        font-size: 0.95rem;
+    }
+    .appointmentTime {
+        font-size: 0.8rem;
+    }
+    .appointmentIcon {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .upcomingSchedule {
+        padding: var(--spacing-xxs);
+        gap: var(--spacing-xxs);
+    }
+    .sectionTitle {
+        font-size: 1rem;
+    }
+    .dayHeader {
+        font-size: 0.8rem;
+    }
+    .appointmentCard {
+        padding: var(--spacing-xs);
+        min-height: 55px;
+    }
+    .appointmentTitle {
+        font-size: 0.9rem;
+    }
+    .appointmentTime {
+        font-size: 0.75rem;
+    }
+    .appointmentIcon {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,83 @@
+.dashboardOverviewCard {
+    background-color: var(--card-bg); 
+    border-radius: var(--border-radius-lg); 
+    box-shadow: 0 5px 15px var(--shadow-light); 
+    padding: var(--spacing-md);
+    display: flex; 
+    gap: var(--spacing-lg); 
+    flex-wrap: wrap;  
+    align-items: flex-start; 
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+
+.placeholderAnatomy {
+    flex: 2; 
+    min-width: 300px; 
+    background-color: #f0f8ff; 
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 350px; 
+    box-sizing: border-box;
+}
+
+.placeholderHealthCards {
+    flex: 1; 
+    min-width: 220px; 
+    background-color: #f8f8f8; 
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md); 
+    min-height: 350px; 
+    box-sizing: border-box;
+}
+
+
+
+@media (max-width: 1024px) { 
+    .dashboardOverviewCard {
+        flex-direction: column; 
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm);
+    }
+
+    .placeholderAnatomy,
+    .placeholderHealthCards {
+        flex: none; 
+        width: 100%; 
+        min-width: auto; 
+        padding: var(--spacing-sm);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .dashboardOverviewCard {
+        padding: var(--spacing-xs);
+    }
+    .placeholderAnatomy,
+    .placeholderHealthCards {
+        min-height: 250px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboardOverviewCard {
+        padding: var(--spacing-xs);
+    }
+    .placeholderAnatomy,
+    .placeholderHealthCards {
+        min-height: 200px; 
+    }
+}

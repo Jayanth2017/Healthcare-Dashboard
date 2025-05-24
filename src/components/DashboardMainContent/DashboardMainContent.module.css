@@ -1,0 +1,49 @@
+/* src/components/DashboardMainContent/DashboardMainContent.module.css */
+
+.dashboardMain {
+    grid-area: main; /* This is key for its placement in App.module.css grid */
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Desktop layout: Left column 2 parts, Right 1 part */
+    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    align-items: start;
+    overflow-y: auto; /* Allow this main content area to scroll if its content overflows */
+}
+
+.leftColumn {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.rightColumn {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+/* --- Responsiveness for DashboardMainContent (internal stacking) --- */
+@media (max-width: 1024px) {
+    .dashboardMain {
+        /* When App.module.css makes it 1fr, this component itself needs to stack its internal columns */
+        grid-template-columns: 1fr; /* Stack into a single column for tablets/smaller desktops */
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboardMain {
+        /* This component should now take full width because App.module.css removed the sidebar's column.
+           Its internal content is already stacked by the 1024px media query above.
+           We just need to adjust padding/gaps for smaller screens. */
+        padding: var(--spacing-sm);
+        gap: var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboardMain {
+        padding: var(--spacing-xs);
+        gap: var(--spacing-sm);
+    }
+}

@@ -1,0 +1,202 @@
+.anatomySection {
+    flex: 2;
+    min-width: 300px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    max-height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.anatomyImage {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    max-height: 800px; 
+}
+
+
+.indicator {
+    background-color: rgb(93, 135, 250);
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 0 10px 10px 10px;
+}
+
+.indicator:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.indicatorContent {
+    color: var(--card-bg); 
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--border-radius-sm);
+    font-size: 14px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xxs);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+.heartIndicator .indicatorContent { 
+    background-color: var(--primary-blue); 
+}
+.heartIcon {
+    font-size: 16px;
+}
+
+
+.legIndicator .indicatorContent { 
+    background-color: var(--tertiary-teal); 
+}
+.arrowIcon {
+    font-size: 16px;
+}
+
+
+.zoomIcon {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background-color: var(--card-bg);
+    color: var(--text-medium);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.zoomIcon:hover {
+    background-color: var(--background-light-gray);
+}
+
+
+.progressBar {
+    width: 80%;
+    height: 8px;
+    background-color: var(--border-light);
+    border-radius: 4px;
+    margin-top: var(--spacing-md);
+    position: relative;
+}
+
+.progressBarTrack {
+    width: 100%;
+    height: 100%;
+    background-color: var(--border-light);
+    border-radius: 4px;
+}
+
+.progressBarThumb {
+    position: absolute;
+    top: -4px;
+    left: 30%;
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-blue);
+    border-radius: 50%;
+    cursor: grab;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    transition: left 0.2s ease-in-out;
+}
+
+
+@media (max-width: 1024px) {
+    .anatomySection {
+        flex: none;
+        width: 100%;
+        min-width: auto;
+        padding: var(--spacing-sm);
+    }
+    .anatomyImage {
+        max-height: 850px;
+    }
+    .indicator {
+        font-size: 12px;
+    }
+    .heartIcon, .arrowIcon {
+        font-size: 14px;
+    }
+    .indicatorContent {
+        padding: var(--spacing-xxs) var(--spacing-sm);
+    }
+    .zoomIcon {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .anatomySection {
+        padding: var(--spacing-xs);
+    }
+    .anatomyImage {
+        max-height: 800px;
+    }
+    .indicator {
+    background-color: rgb(93, 135, 250);
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 0 10px 10px 10px;
+}
+
+.indicator:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+}
+
+@media (max-width: 480px) {
+    .anatomySection {
+        padding: var(--spacing-xxs);
+    }
+    .anatomyImage {
+        max-height: 180px;
+    }
+    
+         .indicator {
+    background-color: rgb(93, 135, 250);
+    position: absolute;
+    transform: translate(-50%, -50%); 
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-radius: 0 10px 10px 10px;
+    }
+    
+.indicator:hover {
+    transform: translate(-50%, -50%) scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+}

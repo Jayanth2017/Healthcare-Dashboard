@@ -1,0 +1,82 @@
+.healthStatusCardsContainer {
+    display: flex;
+    flex-direction: column; 
+    gap: var(--spacing-sm); 
+    flex: 1; 
+        min-width: 300px; 
+    padding: var(--spacing-xs); 
+}
+
+.card {
+    background-color: var(--card-bg); 
+    border-radius: var(--border-radius-md); 
+    box-shadow: 0 2px 5px var(--shadow-light); 
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs); 
+}
+
+.cardHeader {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-xs); 
+}
+
+.cardIcon {
+    font-size: 24px; 
+    margin-right: var(--spacing-sm);
+    color: var(--primary-blue); 
+}
+
+
+.cardTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin: 0;
+    flex-grow: 1; 
+}
+
+.infoIcon {
+    font-size: 20px;
+    color: var(--text-medium); 
+    cursor: pointer;
+}
+
+.cardDate {
+    font-size: 12px;
+    color: var(--text-medium);
+    margin-bottom: var(--spacing-xs); 
+}
+
+.progressBarBackground {
+    background-color: var(--border-light); 
+    height: 8px; 
+    border-radius: var(--border-radius-sm);
+    overflow: hidden; 
+}
+
+.progressBarFill {
+    height: 80%;
+    border-radius: var(--border-radius-sm);
+    transition: width 0.3s ease-in-out; 
+}
+
+.detailsLink {
+    align-self: flex-end; 
+    font-size: 10px;
+    color: var(--primary-blue);
+    margin-top: var(--spacing-sm);
+    font-weight: 600;
+}
+
+.detailsLink:hover {
+    text-decoration: underline;
+}
+
+:root {
+    --success-green: #28a745;
+    --danger-red: #dc3545;
+    --warning-orange: #ffc107;
+}

@@ -1,0 +1,113 @@
+/* src/components/Sidebar/Sidebar.module.css */
+
+.sidebar {
+    grid-area: sidebar; /* Assigned from App.module.css */
+    background-color: var(--secondary-dark-blue);
+    color: var(--text-light);
+    padding: var(--spacing-lg) var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+    box-shadow: 2px 0 5px var(--shadow-light);
+    border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+    margin-right: var(--spacing-md); /* Provides spacing from main content */
+}
+
+.branding {
+    margin-bottom: var(--spacing-xl);
+    text-align: center; /* Center the branding text */
+}
+
+.branding h2 {
+    font-size: 24px;
+    font-weight: 700; /* Bold */
+    margin: 0; /* Remove default margin */
+    color: var(--card-bg); /* White color for Healthcare */
+}
+
+.brandingDot {
+    color: var(--primary-blue); /* Blue accent for the dot */
+}
+
+.navigation {
+    flex-grow: 1; /* Allows navigation to take up available space */
+}
+
+.category {
+    margin-bottom: var(--spacing-lg); /* Space between categories */
+}
+
+.category h3 {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5); /* Lighter gray for category headings */
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-left: var(--spacing-md); /* Align with nav items */
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+}
+
+.category ul {
+    list-style: none; /* Remove default list style */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md); /* Padding inside each nav item */
+    margin-bottom: var(--spacing-xxs); /* Small space between items */
+    border-radius: var(--border-radius-sm);
+    transition: background-color 0.2s ease-in-out;
+    
+}
+
+.navItem:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle hover background */
+    cursor: pointer;
+}
+
+.navIcon {
+    font-size: 18px;
+    margin-right: var(--spacing-sm); /* Space between icon and text */
+    color: rgba(255, 255, 255, 0.7); /* Slightly muted icon color */
+    width: 20px; /* Fixed width to prevent icon jitter */
+    text-align: center;
+}
+
+.navLink {
+    color: var(--text-light); /* White/light text color for links */
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    flex-grow: 1; /* Allows link to take up remaining space */
+}
+
+/* Active state for Dashboard */
+.navItem.active {
+    background-color: var(--primary-blue); 
+    color: var(--card-bg); /* White text for active item */
+}
+
+.navItem.active .navIcon {
+    color: var(--card-bg); /* White icon for active item */
+}
+
+.setting {
+    margin-top: var(--spacing-lg); /* Space above setting item */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator line */
+    padding-top: var(--spacing-lg);
+}
+
+
+/* --- Responsiveness for Sidebar (Initial thought) --- */
+/*
+
+@media (max-width: 780px) {
+    .sidebar {
+        
+        display: none; 
+    }
+} */

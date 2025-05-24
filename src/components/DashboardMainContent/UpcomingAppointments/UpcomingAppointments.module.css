@@ -1,0 +1,115 @@
+.upcomingAppointments {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-md); 
+    width: auto;
+    box-sizing: border-box;
+    margin-top: var(--spacing-md); 
+    
+}
+
+.appointmentCard {
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15); 
+    width: 50%;
+    box-sizing: border-box;
+    color: black;
+    background-color: aliceblue;
+}
+.appointmentCard:hover{
+    cursor: pointer;
+    color: blue;
+}
+
+
+.appointmentDetails {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xxs);
+    flex-grow: 1; 
+}
+
+.appointmentType {
+    font-size: 1.1rem;
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.appointmentTime,
+.doctorName {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+.appointmentIcon {
+    font-size: 2.5rem; 
+    margin-left: var(--spacing-md);
+    opacity: 0.8; 
+}
+
+
+@media (max-width: 1024px) {
+    .upcomingAppointments {
+        gap: var(--spacing-sm);
+        margin-top: var(--spacing-sm);
+    }
+    .appointmentCard {
+        padding: var(--spacing-sm);
+    }
+    .appointmentType {
+        font-size: 1rem;
+    }
+    .appointmentTime,
+    .doctorName {
+        font-size: 0.85rem;
+    }
+    .appointmentIcon {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .upcomingAppointments {
+        gap: var(--spacing-xs);
+        margin-top: var(--spacing-xs);
+    }
+    .appointmentCard {
+        padding: var(--spacing-xs);
+    }
+    .appointmentType {
+        font-size: 0.95rem;
+    }
+    .appointmentTime,
+    .doctorName {
+        font-size: 0.8rem;
+    }
+    .appointmentIcon {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .upcomingAppointments {
+        gap: var(--spacing-xxs);
+        margin-top: var(--spacing-xs);
+    }
+    .appointmentCard {
+        padding: var(--spacing-xs);
+    }
+    .appointmentType {
+        font-size: 0.9rem;
+    }
+    .appointmentTime,
+    .doctorName {
+        font-size: 0.75rem;
+    }
+    .appointmentIcon {
+        font-size: 1.5rem;
+    }
+}

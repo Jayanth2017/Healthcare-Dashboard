@@ -1,0 +1,150 @@
+
+
+.activitySection {
+    background-color: var(--card-bg); 
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 5px 15px var(--shadow-light);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 200px; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+}
+
+.title {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.appointmentsCount {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+}
+
+.chartContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end; 
+    height: 120px; 
+    gap: var(--spacing-xs); 
+}
+
+.dayColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end; 
+    height: 100%;
+    flex-grow: 1; 
+    max-width: 50px; 
+}
+
+.barContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
+    width: 100%;
+    height: 100%;
+    position: relative; 
+    border-left: 1px solid var(--border-light); 
+    border-right: 1px solid var(--border-light);
+    box-sizing: border-box;
+}
+
+.barPrimary, .barSecondary {
+    width: 60%; 
+    margin: 0 auto; 
+    border-radius: 2px; 
+    position: absolute; 
+    bottom: 0; 
+}
+
+.barPrimary {
+    background-color: var(--primary-blue);
+    left: 10%; 
+}
+
+.barSecondary {
+    background-color: var(--tertiary-teal);
+    right: 10%; 
+}
+
+.dayLabel {
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    margin-top: var(--spacing-sm);
+    white-space: nowrap; 
+}
+
+
+@media (max-width: 1024px) {
+    .activitySection {
+        padding: var(--spacing-sm);
+    }
+    .header {
+        flex-direction: column; 
+        align-items: flex-start;
+        gap: var(--spacing-xxs);
+    }
+    .title {
+        font-size: 1.1rem;
+    }
+    .appointmentsCount {
+        font-size: 0.8rem;
+    }
+    .chartContainer {
+        height: 100px; 
+        gap: var(--spacing-xs);
+    }
+    .dayLabel {
+        font-size: 0.75rem;
+        margin-top: var(--spacing-xs);
+    }
+}
+
+@media (max-width: 768px) {
+    .activitySection {
+        padding: var(--spacing-xs);
+    }
+    .chartContainer {
+        height: 80px; 
+        gap: var(--spacing-xxs);
+    }
+    .barPrimary, .barSecondary {
+        width: 50%; 
+    }
+    .dayLabel {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .activitySection {
+        padding: var(--spacing-xxs);
+    }
+    .title {
+        font-size: 1rem;
+    }
+    .appointmentsCount {
+        font-size: 0.75rem;
+    }
+    .chartContainer {
+        height: 70px;
+    }
+    .dayColumn {
+        max-width: 40px; 
+    }
+    .dayLabel {
+        font-size: 0.65rem;
+    }
+}
